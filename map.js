@@ -1,7 +1,8 @@
 var locations = [
       ['Waimanalo Beach', 21.33, -157.68],
       ['Waikiki Beach', 21.27, -157.82],
-      ['Lanikai Beach', 21.39, -157.71]
+      ['Lanikai Beach', 21.39, -157.71],
+      ['Sharks Cove', 21.65, -158.06]
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
