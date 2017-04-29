@@ -8,6 +8,7 @@
           "long": -157.68
         },
         "weather": "Sunny",
+        "temperature": 78,
         "hazards": [
           "box jelly fish"
         ]
@@ -19,6 +20,7 @@
           "long": -157.82
         },
         "weather": "Overcast",
+        "temperature": 74,
         "hazards": [
           "shark sighting",
           "brown water"
@@ -31,6 +33,7 @@
           "long": -157.71
         },
         "weather": "Raining",
+        "temperature": 70,
         "hazards": [
           "high rain",
           "strong current"
