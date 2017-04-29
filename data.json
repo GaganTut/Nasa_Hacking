@@ -1,0 +1,41 @@
+[
+  {
+    "beachList": [
+      {
+        "name": "Waimanalo Beach",
+        "coords": {
+          "lat": 21.33,
+          "long": -157.68
+        },
+        "weather": "Sunny",
+        "hazards": [
+          "box jelly fish"
+        ]
+      },
+      {
+        "name": "Waikiki Beach",
+        "coords": {
+          "lat": 21.27,
+          "long": -157.82
+        },
+        "weather": "Overcast",
+        "hazards": [
+          "shark sighting",
+          "brown water"
+        ]
+      },
+      {
+        "name": "Lanikai Beach",
+        "coords": {
+          "lat": 21.39,
+          "long": -157.71
+        },
+        "weather": "Raining",
+        "hazards": [
+          "high rain",
+          "strong current"
+        ]
+      },
+    ]
+  }
+]
