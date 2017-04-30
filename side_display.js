@@ -25,24 +25,25 @@ const showSideBar = (locations, i, map) => {
   });
 
   //append the beach name
-  beachName =  document.createElement("h2");
+  beachName =  document.createElement("h1");
   beachName.innerHTML = locations[i][0];
   sideNav.appendChild(beachName);
 
   //append the links
 
   //weather
-  var weather = document.createElement('h3');
+
+  var weather = document.createElement('ul');
   weather.innerHTML = 'Weather';
   sideNav.appendChild(weather);
 
   //hazards
-  var hazards = document.createElement('h3');
+  var hazards = document.createElement('ul');
   hazards.innerHTML = 'Hazards'
   sideNav.appendChild(hazards);
 
   //Ocean
-  var ocean = document.createElement('h3');
+  var ocean = document.createElement('ul');
   ocean.innerHTML = 'Ocean'
   sideNav.appendChild(ocean);
 }
