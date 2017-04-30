@@ -41,7 +41,7 @@ const showSideBar = (locations, i, map) => {
 
   //weather
 
-  let weather = document.createElement('div');
+  /*let weather = document.createElement('div');
   weather.innerHTML = 'Weather';
 
   let weatherPic = document.createElement('img');
@@ -52,18 +52,18 @@ const showSideBar = (locations, i, map) => {
 
   weather.appendChild(weatherPic);
   weather.appendChild(weatherInfo);
-  sideNav.appendChild(weather);
+  sideNav.appendChild(weather);*/
 
   //hazards
-  /*let hazards = document.createElement('div');
+  let hazards = document.createElement('div');
   hazards.innerHTML = 'Hazards';
   let hazardPic = document.createElement('img');
-  hazardPic.setAttribute('src', makeDiv.getHazPic(locations[i][0]));
+  //parseJSON.getHazPic(locations[i][0], appendPic, hazardPic);
   let hazardInfo = document.createElement('p');
-  hazardInfo.innerHTML = parseJSON.getWeatherInfo(locations[i][0]);
+  parseJSON.getHazInfo(locations[i][0], appendData, hazardInfo);
   hazards.appendChild(hazardPic);
   hazards.appendChild(hazardInfo);
-  sideNav.appendChild(hazards);*/
+  sideNav.appendChild(hazards);
 
   //Ocean
   let ocean = document.createElement('div');

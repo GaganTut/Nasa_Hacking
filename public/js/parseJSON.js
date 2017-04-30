@@ -40,7 +40,19 @@ const getWeatherPic = (beachName, cb, element) => {
       case 'Overcast':
         cb(element, 'public/assets/sunny.jpg');
         break;
+      default:
+        cb(element, 'public/assets/sunny.jpg');
+        break;
     }
+  });
+};
+
+const getHazInfo = (beachName, cb, element) => {
+  $.getJSON('conditions.json', (json) => {
+    let index = json.map(function(x){return x.beach;}).indexOf(beachName);
+    console.log(json[index]);
+    let info = json[index].description;
+    cb(element, info);
   });
 };
 
@@ -49,7 +61,8 @@ const getWeatherPic = (beachName, cb, element) => {
   return {
     beachNames,
     getWeatherInfo,
-    getWeatherPic
+    getWeatherPic,
+    getHazInfo
 
   };
 
