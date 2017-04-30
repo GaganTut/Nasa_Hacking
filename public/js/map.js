@@ -1,5 +1,4 @@
-
-
+/*jshint esversion: 6*/
 const createMap = (locations) => {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 11,
@@ -35,7 +34,7 @@ const createMap = (locations) => {
       };
     })(marker, i));
   }
-}
+};
 $(document).ready(function() {
   parseJSON.beachNames(createMap);
 });

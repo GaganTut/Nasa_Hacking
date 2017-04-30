@@ -1,14 +1,13 @@
-
+/*jshint esversion: 6*/
 const parseJSON = (()=> {
 
-
-
 const beachNames = (cb) =>{
-  console.log('herreee');
-  console.log($);
   $.getJSON('conditions.json', (json)=> {
-    console.log(json);
-    cb();
+    let locations = [];
+    for(let k in json) {
+      locations.push([json[k].beach, json[k].lat, json[k].lon]);
+    }
+    cb(locations);
   });
 };
 
@@ -24,4 +23,4 @@ const getWeatherInfo = (beachName) =>{
 
   };
 
-})()
+})();
