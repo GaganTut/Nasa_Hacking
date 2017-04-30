@@ -41,7 +41,7 @@ const showSideBar = (locations, i, map) => {
 
   //weather
 
-  /*let weather = document.createElement('div');
+  let weather = document.createElement('div');
   weather.innerHTML = 'Weather';
 
   let weatherPic = document.createElement('img');
@@ -52,7 +52,7 @@ const showSideBar = (locations, i, map) => {
 
   weather.appendChild(weatherPic);
   weather.appendChild(weatherInfo);
-  sideNav.appendChild(weather);*/
+  sideNav.appendChild(weather);
 
   //hazards
   let hazards = document.createElement('div');

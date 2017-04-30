@@ -1,3 +1,4 @@
+/*jshint esversion: 6*/
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -15,7 +16,7 @@ app.get('/alerts.json', (req, res) => {
 
 app.get('/conditions.json', (req, res) => {
   let conditionsJSON = requestObj.makeRequest(requestObj.conditions, 'conditions', (error1) => {
-    if (error1) res.send(500, 'This is Error')
+    if (error1) res.send(500, 'This is Error');
     res.sendFile(path.resolve(__dirname, 'conditions.json'));
   });
 });
