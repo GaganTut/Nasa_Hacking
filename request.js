@@ -4,7 +4,7 @@ const conditions = 'http://www.hawaiibeachsafety.com/rest/conditions.json';
 const alerts = 'http://www.hawaiibeachsafety.com/rest/alerts.json';
 
 
-function makeRequest(url, name) {
+function makeRequest(url, name, cb) {
   http.get(url, (res) => {
     const { statusCode } = res;
 
@@ -27,12 +27,14 @@ function makeRequest(url, name) {
         fs.writeFile(name + '.json', rawData, (err) => {
           if (err) throw err;
           console.log('The file has been saved!');
+          cb();
         });
       } catch (e) {
         console.error(e.message);
       }
     }).on('error', (e) => {
       console.error(`Got error: ${e.message}`);
+      cb(e);
     });
   });
 }

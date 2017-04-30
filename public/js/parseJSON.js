@@ -1,16 +1,14 @@
-
+/*jshint esversion: 6*/
 const parseJSON = (()=> {
 
-const alerts = $.getJSON('alerts.json', (json)=> {
-  return json;
-});
-
-const conditions = $.getJSON('conditions.json', (json)=> {
-  return json;
-});
-
-const beachNames = () =>{
-  console.log(JSON.parse(conditions.responseText));
+const beachNames = (cb) =>{
+  $.getJSON('conditions.json', (json)=> {
+    let locations = [];
+    for(let k in json) {
+      locations.push([json[k].beach, json[k].lat, json[k].lon]);
+    }
+    cb(locations);
+  });
 };
 
 const getWeatherInfo = (beachName) =>{
@@ -25,4 +23,4 @@ const getWeatherInfo = (beachName) =>{
 
   };
 
-})()
+})();

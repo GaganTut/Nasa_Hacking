@@ -7,18 +7,20 @@ const http = require('http');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/alerts.json', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'alerts.json'));
+  let alertsJSON = requestObj.makeRequest(requestObj.alerts, 'alerts', (error2) => {
+    if (error2) res.send(500, 'SecondError');
+    res.sendFile(path.resolve(__dirname, 'alerts.json'));
+  });
 });
 
 app.get('/conditions.json', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'conditions.json'));
+  let conditionsJSON = requestObj.makeRequest(requestObj.conditions, 'conditions', (error1) => {
+    if (error1) res.send(500, 'This is Error')
+    res.sendFile(path.resolve(__dirname, 'conditions.json'));
+  });
 });
 
 app.get('/', (req, res) => {
-  let conditionsJSON = requestObj.makeRequest(requestObj.conditions, 'conditions');
-
-  let alertsJSON = requestObj.makeRequest(requestObj.alerts, 'alerts');
-
   res.sendFile(path.resolve(__dirname, 'public/index.html'));
 });
 
