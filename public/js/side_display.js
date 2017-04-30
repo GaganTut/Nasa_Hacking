@@ -36,9 +36,9 @@ const showSideBar = (locations, i, map) => {
   let weather = document.createElement('div');
   weather.innerHTML = 'Weather';
   let weatherPic = document.createElement('img');
-  weatherPic.setAttribute('src', makeDiv.getImage('Soemthing'))
-  let weatherInfo = document.createElement('p')
-  weatherInfo.innerHTML = makeDiv.getWeatherInfo('Something');
+  // weatherPic.setAttribute('src', makeDiv.getImage('Soemthing'));
+  let weatherInfo = document.createElement('p');
+  weatherInfo.innerHTML = parseJSON.getWeatherInfo('Something');
   weather.appendChild(weatherPic);
   weather.appendChild(weatherInfo);
   sideNav.appendChild(weather);
