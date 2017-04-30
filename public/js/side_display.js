@@ -1,3 +1,12 @@
+/*jshint esversion: 6*/
+const appendData = (element, data) => {
+  element.innerHTML = data;
+};
+
+const appendPic = (element, data) => {
+  element.setAttribute('src', data);
+};
+
 const showSideBar = (locations, i, map) => {
   let sideNav = document.querySelector("#sidebar");
   let mapDiv = document.querySelector('#map');
@@ -12,7 +21,6 @@ const showSideBar = (locations, i, map) => {
   // append a closing button with an evnet listener
 
   closebtn = document.createElement("a");
-  closebtn.href = 'javascript:void(0)';
   closebtn.innerHTML = '&times';
   sideNav.appendChild(closebtn);
 
@@ -35,16 +43,18 @@ const showSideBar = (locations, i, map) => {
 
   let weather = document.createElement('div');
   weather.innerHTML = 'Weather';
+
   let weatherPic = document.createElement('img');
-  weatherPic.setAttribute('src', parseJSON.getImage(locations[i][0]));
+  //parseJSON.getWeatherInfo(locations[i][0], appendPic, weatherPic);
   let weatherInfo = document.createElement('p');
-  weatherInfo.innerHTML = parseJSON.getWeatherInfo(locations[i][0]);
+  parseJSON.getWeatherInfo(locations[i][0], appendData, weatherInfo);
+
   weather.appendChild(weatherPic);
   weather.appendChild(weatherInfo);
   sideNav.appendChild(weather);
 
   //hazards
-  let hazards = document.createElement('div');
+  /*let hazards = document.createElement('div');
   hazards.innerHTML = 'Hazards';
   let hazardPic = document.createElement('img');
   hazardPic.setAttribute('src', makeDiv.getHazPic(locations[i][0]));
@@ -52,7 +62,7 @@ const showSideBar = (locations, i, map) => {
   hazardInfo.innerHTML = parseJSON.getWeatherInfo(locations[i][0]);
   hazards.appendChild(hazardPic);
   hazards.appendChild(hazardInfo);
-  sideNav.appendChild(hazards);
+  sideNav.appendChild(hazards);*/
 
   //Ocean
   let ocean = document.createElement('div');
