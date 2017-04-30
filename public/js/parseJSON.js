@@ -5,7 +5,7 @@ let conditions;
 let alerts;
 
 const loadAlerts = (cb) =>{
-  $.getJSON('alerts.json', (json)=> {
+  $.getJSON('http://www.hawaiibeachsafety.com/rest/alerts.json', (json)=> {
     alerts = json;
     let arrayAlert = [];
     for(let k in alerts) {
