@@ -1,25 +1,26 @@
 
 const parseJSON = (()=> {
 
-const data = $.getJSON('alerts.json', (json)=> {
-  console.log(json);
+const alerts = $.getJSON('alerts.json', (json)=> {
+  return json;
 });
 
-console.log(data);
+const conditions = $.getJSON('conditions.json', (json)=> {
+  return json;
+});
 
+const beachNames = () =>{
+  console.log(JSON.parse(conditions.responseText));
+};
 
-  const beachNames = () =>{
-    fs.readfile('/')
-  };
+const getWeatherInfo = (beachName) =>{
 
-  const getWeatherInfo = (beachName) =>{
-
-
-  };
+};
 
 // overcast, rain, sunny, cloudy & breezy,
 
   return {
+    beachNames: beachNames,
     getWeatherInfo: getWeatherInfo
 
   };
