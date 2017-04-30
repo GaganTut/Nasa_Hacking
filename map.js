@@ -1,29 +1,33 @@
-var locations = [
-      ['Waimanalo Beach', 21.33, -157.68],
-      ['Waikiki Beach', 21.27, -157.82],
-      ['Lanikai Beach', 21.39, -157.71]
-    ];
+const beachList = data[0].beachList;
 
-    var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(21.43, -158.00),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    });
+const locations = [];
 
-    var infowindow = new google.maps.InfoWindow();
+for (let k in beachList) {
+  let locationArr = [beachList[k].name, beachList[k].coords.lat, beachList[k].coords.long]
+  locations.push(locationArr);
+}
 
-    var marker, i;
 
-    for (i = 0; i < locations.length; i++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
-      });
+var map = new google.maps.Map(document.getElementById('map'), {
+  zoom: 11,
+  center: new google.maps.LatLng(21.47, -157.97),
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+});
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infowindow.setContent(locations[i][0]);
-          infowindow.open(map, marker);
-        }
-      })(marker, i));
-    }
+var infowindow = new google.maps.InfoWindow();
+
+var marker, i;
+
+for (i = 0; i < locations.length; i++) {
+  marker = new google.maps.Marker({
+    position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+    map: map
+  });
+
+  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+    return function() {
+      infowindow.setContent(locations[i][0]);
+      infowindow.open(map, marker);
+    };
+  })(marker, i));
+}
