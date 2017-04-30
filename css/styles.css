@@ -44,12 +44,13 @@
 }
 
 
-.sidenav ul{
-      color: #E9E8E7;
-      font-size: 150%;
+.sidenav div{
+  color: #E9E8E7;
+  font-size: 150%;
+  margin-left: 10%;
 }
 
-.sidenav ul:hover{
+.sidenav div:hover{
     font-weight: 900;
 }
 

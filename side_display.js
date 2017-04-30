@@ -33,17 +33,29 @@ const showSideBar = (locations, i, map) => {
 
   //weather
 
-  var weather = document.createElement('ul');
+  let weather = document.createElement('div');
   weather.innerHTML = 'Weather';
+  let weatherPic = document.createElement('img');
+  weatherPic.setAttribute('src', makeDiv.getImage('Soemthing'))
+  let weatherInfo = document.createElement('p')
+  weatherInfo.innerHTML = makeDiv.getWeatherInfo('Something');
+  weather.appendChild(weatherPic);
+  weather.appendChild(weatherInfo);
   sideNav.appendChild(weather);
 
   //hazards
-  var hazards = document.createElement('ul');
-  hazards.innerHTML = 'Hazards'
+  let hazards = document.createElement('div');
+  hazards.innerHTML = 'Hazards';
+  let hazardPic = document.createElement('img');
+  hazardPic.setAttribute('src', makeDiv.getHazPic('Soemthing'))
+  let weatherInfo = document.createElement('p')
+  weatherInfo.innerHTML = parseJSON.getWeatherInfo('Something');
+  weather.appendChild(weatherPic);
+  weather.appendChild(weatherInfo);
   sideNav.appendChild(hazards);
 
   //Ocean
-  var ocean = document.createElement('ul');
+  let ocean = document.createElement('div');
   ocean.innerHTML = 'Ocean'
   sideNav.appendChild(ocean);
 }
