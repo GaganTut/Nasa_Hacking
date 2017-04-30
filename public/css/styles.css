@@ -1,6 +1,32 @@
-/* The side navigation menu */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,900');
 
-.sidenav {
+#map {
+    height: 100%;
+    width: 100%;
+    right: 0;
+    position: absolute;
+    top: 0;
+}
+
+/* The close button*/
+.sidenav a {
+    color: white;
+    padding-left: 90%;
+    text-decoration: none;
+    font-size: 250%;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+    color: #5CF22C;
+}
+
+
+/* The side navigation menu */
+.sidenav  {
+    font-family: 'Playfair Display', serif;
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
@@ -9,24 +35,25 @@
     left: 0;
     background-color: #111; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 60px; /* Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* The navigation menu links */
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
+.sidenav h1{
+  color: white;
+  text-align: center;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
+
+.sidenav div{
+  color: #E9E8E7;
+  font-size: 150%;
+  margin-left: 10%;
 }
+
+.sidenav div:hover{
+    font-weight: 900;
+}
+
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
@@ -38,10 +65,6 @@
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#map {
-    transition: margin-left .5s;
-    padding: 20px;
-}
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
