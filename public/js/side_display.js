@@ -45,7 +45,8 @@ const showSideBar = (locations, i, map) => {
   weather.innerHTML = 'Weather';
 
   let weatherPic = document.createElement('img');
-  //parseJSON.getWeatherInfo(locations[i][0], appendPic, weatherPic);
+  weatherPic.className = 'mini-logos';
+  parseJSON.getWeatherPic(locations[i][0], appendPic, weatherPic);
   let weatherInfo = document.createElement('p');
   parseJSON.getWeatherInfo(locations[i][0], appendData, weatherInfo);
 
