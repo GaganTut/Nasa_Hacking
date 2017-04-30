@@ -46,12 +46,12 @@ const showSideBar = (locations, i, map) => {
   //hazards
   let hazards = document.createElement('div');
   hazards.innerHTML = 'Hazards';
-  let hazardPic = document.createElement('img');
+  /*let hazardPic = document.createElement('img');
   hazardPic.setAttribute('src', makeDiv.getHazPic('Soemthing'))
   let weatherInfo = document.createElement('p')
   weatherInfo.innerHTML = parseJSON.getWeatherInfo('Something');
   weather.appendChild(weatherPic);
-  weather.appendChild(weatherInfo);
+  weather.appendChild(weatherInfo);*/
   sideNav.appendChild(hazards);
 
   //Ocean
