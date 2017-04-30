@@ -1,10 +1,20 @@
+
 const parseJSON = (()=> {
+
+const data = $.getJSON('alerts.json', (json)=> {
+  console.log(json);
+});
+
+console.log(data);
+
+
+  const beachNames = () =>{
+    fs.readfile('/')
+  };
 
   const getWeatherInfo = (beachName) =>{
 
-    console.log(data[0].beachList.map(function(x){return x.name;}));
-    const indexBeach = data[0].beachList.map(function(x){return x.name;}).indexOf(beachName);
-    console.log(indexBeach);
+
   };
 
 // overcast, rain, sunny, cloudy & breezy,

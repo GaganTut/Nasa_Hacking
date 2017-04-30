@@ -6,6 +6,14 @@ const http = require('http');
 
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
+app.get('/alerts.json', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'alerts.json'));
+});
+
+app.get('/conditions.json', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'conditions.json'));
+});
+
 app.get('/', (req, res) => {
   let conditionsJSON = requestObj.makeRequest(requestObj.conditions, 'conditions');
 
