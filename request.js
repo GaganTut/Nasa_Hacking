@@ -1,31 +1,44 @@
+const http = require('http');
+const fs = require('fs');
+const conditions = 'http://www.hawaiibeachsafety.com/rest/conditions.json';
+const alerts = 'http://www.hawaiibeachsafety.com/rest/alerts.json';
 
-let httpRequest;
 
-function makeRequest() {
-  httpRequest = new XMLHttpRequest();
+function makeRequest(url, name) {
+  http.get(url, (res) => {
+    const { statusCode } = res;
 
-  if(!httpRequest) {
-    alert('Cannot create XMLHttpRequest');
-    return false;
-  }
-
-  httpRequest.onreadystatechange = alertContents;
-  httpRequest.open('GET', 'http://www.hawaiibeachsafety.com/rest/conditions.json');
-  httpRequest.send();
-}
-
-function alertContents() {
-  try {
-    if(httpRequest.readyState === XMLHttpRequest.DONE) {
-      if(httpRequest.status === 200) {
-        console.log(httpRequest.responseText);
-      } else {
-        alert('There was a problem with the request');
-      }
+    let error;
+    if (statusCode !== 200) {
+      error = new Error(`Request Failed.\n` +
+                        `Status Code: ${statusCode}`);
     }
-  } catch(e) {
-    alert('Caught Exception: ' + e.description);
-  }
+    if (error) {
+      console.error(error.message);
+      // consume response data to free up memory
+      res.resume();
+      return;
+    }
+
+    let rawData = '';
+    res.on('data', (chunk) => { rawData += chunk; });
+    res.on('end', () => {
+      try {
+        fs.writeFile(name + '.json', rawData, (err) => {
+          if (err) throw err;
+          console.log('The file has been saved!');
+        });
+      } catch (e) {
+        console.error(e.message);
+      }
+    }).on('error', (e) => {
+      console.error(`Got error: ${e.message}`);
+    });
+  });
 }
 
-makeRequest();
+module.exports = {
+  makeRequest,
+  conditions,
+  alerts
+};
