@@ -44,16 +44,16 @@ const getWeatherPic = (beachName, cb, element) => {
         cb(element, 'public/assets/sunny.jpg');
         break;
       case 'Mostly Cloudy':
-        cb(element, 'public/assets/sunny.jpg');
+        cb(element, 'public/assets/overcast.png');
         break;
       case 'Rain Fog/Mist':
-        cb(element, 'public/assets/sunny.jpg');
+        cb(element, 'public/assets/rainy.png');
         break;
       case 'Light Rain':
-        cb(element, 'public/assets/sunny.jpg');
+        cb(element, 'public/assets/rainy.png');
         break;
       case 'Overcast':
-        cb(element, 'public/assets/sunny.jpg');
+        cb(element, 'public/assets/overcast.png');
         break;
       default:
         cb(element, 'public/assets/sunny.jpg');
