@@ -7,7 +7,14 @@ let alerts;
 const loadAlerts = (cb) =>{
   $.getJSON('alerts.json', (json)=> {
     alerts = json;
-    cb();
+    let arrayAlert = [];
+    for(let k in alerts) {
+      if(arrayAlert.indexOf(alerts[k].alert) === -1){
+        arrayAlert.push(alerts[k].alert);
+        console.log(alerts[k].alert);
+      }
+    }
+    cb(arrayAlert);
   });
 };
 
@@ -65,6 +72,7 @@ const getHazInfo = (beachName, cb, element) => {
 // overcast, rain, sunny, cloudy & breezy,
 
   return {
+    loadAlerts,
     beachNames,
     getWeatherInfo,
     getWeatherPic,

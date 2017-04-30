@@ -37,7 +37,4 @@ const createMap = (locations) => {
 };
 $(document).ready(function() {
   parseJSON.beachNames(createMap);
-  parseJSON.loadAlerts(() => {
-    return;
-  });
 });
