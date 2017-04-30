@@ -6,10 +6,9 @@ for (let k in beachList) {
   locations.push(locationArr);
 }
 
-
 var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 11,
-  center: new google.maps.LatLng(21.47, -157.97),
+  center: new google.maps.LatLng(21.47, -157.91),
   mapTypeId: google.maps.MapTypeId.ROADMAP
 });
 
@@ -27,7 +26,7 @@ for (i = 0; i < locations.length; i++) {
     return function() {
       infowindow.setContent(locations[i][0]);
       infowindow.open(map, marker);
-      showSideBar(locations, i);
+      showSideBar(locations, i, map);
     };
   })(marker, i));
 }
