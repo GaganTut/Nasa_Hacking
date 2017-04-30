@@ -1,10 +1,10 @@
-const beachList = data[0].beachList;
+// const beachList = data[0].beachList;
 const locations = [];
 
-for (let k in beachList) {
-  let locationArr = [beachList[k].name, beachList[k].coords.lat, beachList[k].coords.long]
-  locations.push(locationArr);
-}
+// for (let k in beachList) {
+//   let locationArr = [beachList[k].name, beachList[k].coords.lat, beachList[k].coords.long]
+//   locations.push(locationArr);
+// }
 
 var map = new google.maps.Map(document.getElementById('map'), {
   zoom: 11,
