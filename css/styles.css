@@ -1,6 +1,6 @@
 /* The side navigation menu */
-
 .sidenav {
+  color: white;
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
@@ -15,10 +15,10 @@
 
 /* The navigation menu links */
 .sidenav a {
+  color: white;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
     display: block;
     transition: 0.3s
 }
@@ -41,6 +41,7 @@
 #map {
     transition: margin-left .5s;
     padding: 20px;
+    float: right;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

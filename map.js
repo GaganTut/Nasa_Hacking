@@ -1,5 +1,4 @@
 const beachList = data[0].beachList;
-
 const locations = [];
 
 for (let k in beachList) {
@@ -28,6 +27,7 @@ for (i = 0; i < locations.length; i++) {
     return function() {
       infowindow.setContent(locations[i][0]);
       infowindow.open(map, marker);
+      showSideBar(locations, i);
     };
   })(marker, i));
 }
