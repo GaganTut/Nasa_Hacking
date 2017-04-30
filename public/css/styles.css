@@ -75,6 +75,27 @@ body {
   margin-left: 20px;
 }
 
+#warningSign{
+  display: flex;
+  height: 30%;
+  font-size: 80%;
+  top: 2%;
+  right: 2%;
+  width: 25%;
+  position: fixed;
+  z-index: 2;
+  color: black;
+}
+
+#myTable{
+  width: 100%;
+  height: 100%;
+}
+
+#myTable th{
+  font-size: 40px;
+}
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
