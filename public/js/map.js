@@ -36,15 +36,32 @@ const createMap = (locations) => {
   }
 
   const createWarnings = (warnings) => {
-      let listOfWarnings = document.createElement('div');
-      let map = document.querySelector('#mapWarnings');
-      listOfWarnings.innerHTML = warnings.join(" ");
-      listOfWarnings.id = "warningSign";
+    console.log("test1");
+    let mapWarnings = document.querySelector('#mapWarnings');
+    let listOfWarnings = document.createElement('div');
+    listOfWarnings.id = "warningSign";
 
-      map.appendChild(listOfWarnings);
-    };
+    var x = document.createElement("table");
+    x.id = "myTable";
 
-    parseJSON.loadAlerts(createWarnings);
+    th = document.createElement('th');
+    th.innerHTML = "List of Warnings";
+    x.appendChild(th);
+
+    for (let i = 0; i < warnings.length; i++){
+      var y = document.createElement("tr");
+      y.id = "myTr";
+      y.innerHTML = warnings[i];
+      th.appendChild(y);
+    }
+
+    listOfWarnings.appendChild(x);
+    mapWarnings.appendChild(listOfWarnings);
+    console.log(listOfWarnings);
+  };
+
+  parseJSON.loadAlerts(createWarnings);
+
 };
 $(document).ready(function() {
   parseJSON.beachNames(createMap);
