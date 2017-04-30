@@ -1,13 +1,22 @@
 const showSideBar = (locations, i) => {
-  let closebtn = document.querySelector("#closebtn");
   let sideNav = document.querySelector("#sidebar");
 
-  closebtn.addEventListener("click", function(){
-    document.getElementById("mySidenav").style.width = "0";
-  });
+  sideNav.innerHTML = "";
 
   // upon clicking on the markers
   sideNav.style.width = "250px";
+
+  // append a closing button with an evnet listener
+
+  closebtn = document.createElement("a");
+  closebtn.href = 'javascript:void(0)';
+  closebtn.innerHTML = '&times';
+  sideNav.appendChild(closebtn);
+
+
+  closebtn.addEventListener("click", function(){
+      sideNav.style.width = "0";
+  });
 
   //append the beach name
   beachName =  document.createElement("h2");
