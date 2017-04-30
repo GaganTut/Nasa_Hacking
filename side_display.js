@@ -9,7 +9,6 @@ closebtn.addEventListener("click", function(){
 // upon clicking on the markers
 sideNav.style.width = "250px";
 
-
 //append the beach name
 beachName =  document.createElement("h2");
 beachName.innerHTML = locations[i][0];
