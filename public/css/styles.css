@@ -13,7 +13,9 @@ body {
 /* The close button*/
 .sidenav a {
     color: white;
-    padding-left: 90%;
+    text-align: end;
+    padding-right: 20px;
+    /*padding-left: 90%;*/
     text-decoration: none;
     font-size: 250%;
     display: block;
@@ -23,6 +25,7 @@ body {
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
     color: #5CF22C;
+    cursor: pointer;
 }
 
 
@@ -31,7 +34,7 @@ body {
     font-family: 'Playfair Display', serif;
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
-    position: fixed; /* Stay in place */
+    position: absolute; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
@@ -49,7 +52,8 @@ body {
 .sidenav div{
   color: #E9E8E7;
   font-size: 150%;
-  margin-left: 10%;
+  padding: 10px;
+  /*margin-left: 10%;*/
 }
 
 .sidenav div:hover{
@@ -68,6 +72,7 @@ body {
 
 .mini-logos {
   width: 10%;
+  margin-left: 20px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
