@@ -36,9 +36,9 @@ const showSideBar = (locations, i, map) => {
   let weather = document.createElement('div');
   weather.innerHTML = 'Weather';
   let weatherPic = document.createElement('img');
-  // weatherPic.setAttribute('src', makeDiv.getImage('Soemthing'));
+  weatherPic.setAttribute('src', parseJSON.getImage(locations[i][0]));
   let weatherInfo = document.createElement('p');
-  weatherInfo.innerHTML = parseJSON.getWeatherInfo('Waikiki Beach');
+  weatherInfo.innerHTML = parseJSON.getWeatherInfo(locations[i][0]);
   weather.appendChild(weatherPic);
   weather.appendChild(weatherInfo);
   sideNav.appendChild(weather);
@@ -46,17 +46,17 @@ const showSideBar = (locations, i, map) => {
   //hazards
   let hazards = document.createElement('div');
   hazards.innerHTML = 'Hazards';
-  /*let hazardPic = document.createElement('img');
-  hazardPic.setAttribute('src', makeDiv.getHazPic('Soemthing'))
-  let weatherInfo = document.createElement('p')
-  weatherInfo.innerHTML = parseJSON.getWeatherInfo('Something');
-  weather.appendChild(weatherPic);
-  weather.appendChild(weatherInfo);*/
+  let hazardPic = document.createElement('img');
+  hazardPic.setAttribute('src', makeDiv.getHazPic(locations[i][0]));
+  let hazardInfo = document.createElement('p');
+  hazardInfo.innerHTML = parseJSON.getWeatherInfo(locations[i][0]);
+  hazards.appendChild(hazardPic);
+  hazards.appendChild(hazardInfo);
   sideNav.appendChild(hazards);
 
   //Ocean
   let ocean = document.createElement('div');
-  ocean.innerHTML = 'Ocean'
+  ocean.innerHTML = 'Ocean';
   sideNav.appendChild(ocean);
-}
+};
 
