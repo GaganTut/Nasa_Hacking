@@ -101,7 +101,12 @@ body {
 }
 
 #big-title {
-
+  display: flex;
+  position: fixed;
+  z-index: 3;
+  top: 5%;
+  left: 7%;
+  border: solid black;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */

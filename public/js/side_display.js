@@ -10,6 +10,11 @@ const appendPic = (element, data) => {
 const showSideBar = (locations, i, map) => {
   let sideNav = document.querySelector("#sidebar");
   let mapDiv = document.querySelector('#map');
+  let warningSign = document.querySelector('#warningSign');
+  let title = document.querySelector('#big-title');
+
+  warningSign.style.display = 'none';
+  title.style.display = 'none';
 
   sideNav.innerHTML = "";
   // upon clicking on the markers
@@ -26,6 +31,8 @@ const showSideBar = (locations, i, map) => {
 
 
   closebtn.addEventListener("click", function(){
+      warningSign.style.display = 'block';
+      title.style.display = 'block';
       sideNav.style.width = "0";
       mapDiv.style.width = '100%';
       map.setZoom(11);
