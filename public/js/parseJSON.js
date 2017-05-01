@@ -5,7 +5,7 @@ let conditions;
 let alerts;
 
 const loadAlerts = (cb) =>{
-  $.getJSON('../../alerts.json', (json)=> {
+  $.getJSON('alerts.json', (json)=> {
     alerts = json;
     let arrayAlert = [];
     for(let k in alerts) {
@@ -61,11 +61,9 @@ const getWeatherPic = (beachName, cb, element) => {
 };
 
 const getHazInfo = (beachName, cb, element) => {
-  $.getJSON('conditions.json', (json) => {
-    let index = json.map(function(x){return x.beach;}).indexOf(beachName);
-    let info = json[index].description;
-    cb(element, info);
-  });
+  let index = conditions.map(function(x){return x.beach;}).indexOf(beachName);
+  let info = conditions[index].description;
+  cb(element, info);
 };
 
 // overcast, rain, sunny, cloudy & breezy,
