@@ -84,7 +84,7 @@ body {
   width: 25%;
   position: fixed;
   z-index: 2;
-  color: black;
+  color: white;
 }
 
 #myTable{
@@ -93,7 +93,15 @@ body {
 }
 
 #myTable th{
-  font-size: 40px;
+  font-size: 150%;
+}
+
+#myTable tr{
+  font-size: 70%;
+}
+
+#big-title {
+
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
