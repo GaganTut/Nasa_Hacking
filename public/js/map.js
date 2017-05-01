@@ -3,7 +3,7 @@ const createMap = (locations) => {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8,
     center: new google.maps.LatLng(20.5, -157.0),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.SATELLITE
   });
 
   var infowindow = new google.maps.InfoWindow();
@@ -13,7 +13,7 @@ const createMap = (locations) => {
   for (i = 0; i < locations.length; i++) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: map
+      map: map,
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
