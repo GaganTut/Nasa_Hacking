@@ -36,7 +36,6 @@ const createMap = (locations) => {
   }
 
   const createWarnings = (warnings) => {
-    console.log("test1");
     let mapWarnings = document.querySelector('#mapWarnings');
     let listOfWarnings = document.createElement('div');
     listOfWarnings.id = "warningSign";
@@ -57,10 +56,12 @@ const createMap = (locations) => {
 
     listOfWarnings.appendChild(x);
     mapWarnings.appendChild(listOfWarnings);
-    console.log(listOfWarnings);
   };
 
-  parseJSON.loadAlerts(createWarnings);
+
+  $(document).ready(function() {
+    parseJSON.loadAlerts(createWarnings);
+  });
 
 };
 $(document).ready(function() {

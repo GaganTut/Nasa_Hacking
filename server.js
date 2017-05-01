@@ -8,10 +8,9 @@ const http = require('http');
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/alerts.json', (req, res) => {
-  let alertsJSON = requestObj.makeRequest(requestObj.alerts, 'alerts', (error2) => {
-    if (error2) res.send(500, 'SecondError');
+  /*let alertsJSON = requestObj.makeRequest(requestObj.alerts, 'alerts', (error2) => {*/
     res.sendFile(path.resolve(__dirname, 'alerts.json'));
-  });
+  //});
 });
 
 app.get('/conditions.json', (req, res) => {

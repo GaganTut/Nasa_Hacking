@@ -11,7 +11,6 @@ const loadAlerts = (cb) =>{
     for(let k in alerts) {
       if(arrayAlert.indexOf(alerts[k].alert) === -1){
         arrayAlert.push(alerts[k].alert);
-        console.log(alerts[k].alert);
       }
     }
     cb(arrayAlert);
