@@ -48,10 +48,14 @@ const createMap = (locations) => {
     x.appendChild(th);
 
     for (let i = 0; i < warnings.length; i++){
-      var y = document.createElement("tr");
-      y.id = "myTr";
-      y.innerHTML = warnings[i];
-      th.appendChild(y);
+      let thisWarning = warnings[i].split('<br>');
+      for (let j = 0; j < thisWarning.length; j++) {
+        var y = document.createElement("tr");
+        y.id = "myTr";
+        let newString = thisWarning[j].replace(/[...&#42;]/g, ' ');
+        y.innerHTML = newString;
+        x.appendChild(y);
+      }
     }
 
     listOfWarnings.appendChild(x);

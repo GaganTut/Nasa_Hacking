@@ -71,10 +71,5 @@ const showSideBar = (locations, i, map) => {
   hazards.appendChild(hazardPic);
   hazards.appendChild(hazardInfo);
   sideNav.appendChild(hazards);
-
-  //Ocean
-  let ocean = document.createElement('div');
-  ocean.innerHTML = 'Ocean';
-  sideNav.appendChild(ocean);
 };
 
