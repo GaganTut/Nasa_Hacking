@@ -22,9 +22,9 @@ const beachNames = (cb) =>{
     conditions = json;
     let locations = [];
     for(let k in json) {
-      if (json[k].island === 'Oahu') {
+      //if (json[k].island === 'Oahu') {
         locations.push([json[k].beach, json[k].lat, json[k].lon]);
-      }
+      //}
     }
     cb(locations);
   });

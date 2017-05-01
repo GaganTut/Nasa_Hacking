@@ -14,14 +14,15 @@ const showSideBar = (locations, i, map) => {
   let title = document.querySelector('#big-title');
 
   warningSign.style.display = 'none';
-  title.style.display = 'none';
+  //title.style.display = 'none';
 
   sideNav.innerHTML = "";
   // upon clicking on the markers
   sideNav.style.width = "40%";
   mapDiv.style.width = '60%';
-  map.setZoom(10);
-  map.setCenter(new google.maps.LatLng(21.47, -157.58));
+  map.setZoom(8);
+  map.setCenter(new google.maps.LatLng(20.5, -155.5));
+  title.style.left = '45%';
 
   // append a closing button with an evnet listener
 
@@ -32,11 +33,12 @@ const showSideBar = (locations, i, map) => {
 
   closebtn.addEventListener("click", function(){
       warningSign.style.display = 'block';
-      title.style.display = 'block';
+      //title.style.display = 'block';
       sideNav.style.width = "0";
       mapDiv.style.width = '100%';
-      map.setZoom(11);
-      map.setCenter(new google.maps.LatLng(21.47, -157.91));
+      map.setZoom(8);
+      map.setCenter(new google.maps.LatLng(20.5, -157.0));
+      title.style.left = '7%';
   });
 
   //append the beach name

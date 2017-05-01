@@ -1,8 +1,8 @@
 /*jshint esversion: 6*/
 const createMap = (locations) => {
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 11,
-    center: new google.maps.LatLng(21.47, -157.91),
+    zoom: 8,
+    center: new google.maps.LatLng(20.5, -157.0),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
